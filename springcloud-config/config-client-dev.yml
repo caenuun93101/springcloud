@@ -1,0 +1,15 @@
+server:
+  port: 8768
+spring:
+  application:
+    name: spring-cloud-server-config
+  cloud:
+    config:
+      #\u914D\u7F6E\u4ED3\u5E93\u7684\u5206\u652F
+      label: master
+      server:
+        git:
+          #\u914D\u7F6Egit\u4ED3\u5E93\u5730\u5740
+          uri: https://gitee.com/zyjcode/springcloud/
+          #\u914D\u7F6E\u4ED3\u5E93\u8DEF\u5F84
+          search-paths: /spring-cloud-config
