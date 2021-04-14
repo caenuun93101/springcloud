@@ -1,0 +1,22 @@
+server:
+  #\u670D\u52A1\u7684\u7AEF\u53E3
+  port: 8767
+eureka:
+  client:
+    service-url:
+      #\u6307\u5B9A\u670D\u52A1\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    #\u4EE5/to-ribbon/ \u5F00\u5934\u7684\u8BF7\u6C42\u90FD\u8F6C\u53D1\u7ED9service-ribbon\u670D\u52A1\uFF1B
+    to-ribbon:
+      path: /to-ribbon/**
+      serviceId: service-ribbon
+    #\u4EE5/to-feign/\u5F00\u5934\u7684\u8BF7\u6C42\u90FD\u8F6C\u53D1\u7ED9service-feign\u670D\u52A1\uFF1B
+    to-feign:
+      path: /to-feign/**
+      serviceId: service-feign
+
